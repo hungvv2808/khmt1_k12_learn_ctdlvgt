@@ -23,6 +23,7 @@ void sort(int *a, int n){
             a[j+1] = a[j];
             j--;
         }
+        a[j+1] = temp;
     }
 }
 
