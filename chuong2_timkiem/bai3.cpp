@@ -27,6 +27,7 @@ int main()
     delay(500);
     floodfill(x + 80, 100, 12);
     delay(500);
+
     setcolor(RED);
     outtextxy(x + 35, 50, "I L O V E U");
     outtextxy(x + 35, 150, "K I N G K O N G");
