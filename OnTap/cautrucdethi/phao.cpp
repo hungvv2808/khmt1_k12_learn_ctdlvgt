@@ -44,6 +44,62 @@ int phanTuFibonaci(int n){
   else      return 2*n+phanTuFibonaci(n-1);
 }
 
+/*Cau2: Danh sach*/
+
+//--luu tru ke tiep--
+#define MAX 100
+struct item{
+  //thuoc tinh
+};
+struct list{
+  int count;
+  item a[MAX];
+};
+list x;
+//khoi tao danh sach trong
+void khoiTao(list &x){
+  x.count=-1;
+}
+//kiem tra danh sach trong
+int kiemTraRong(list x){
+  return x.count==-1;
+}
+//kiem tra danh sach day
+int full(list x){
+  return x.count==MAX-1;
+}
+//them 1 phan tu vao cuoi danh sach
+int themVaoCuoi(list &x, item key){
+  if(full(x)) return 0;
+  else{
+    x.count++;
+    x.a[x.count]=key;
+    return 1;
+  }
+}
+//xoa 1 phan tu khoi vi tri k
+int xoaPhanTu(int key, list &x){
+  if(key<=x.count+1 && key>0){
+    for(int i=key; i<x.count; i++)  x.a[i-1] = x.a[i];
+    x.count--;
+    return 1;
+  }
+  else  return 0;
+}
+//them 1 phan tu vao vi tri k
+int themPhanTu(list &x, int key, item y){
+  if(key<=x.count+1 && key>0 && !full(x)){
+    for(int i=x.count; i>=key-1; i--) x.a[i+1] = x.a[i];
+    x.a[key-1]=y;
+    x.count++;
+    return 1;
+  }
+  else  return 0;
+}
+
+// moc noi don
+
+
 /*Cau4: Sap Xep*/
 
 //sap noi bot
